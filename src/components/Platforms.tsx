@@ -19,9 +19,33 @@ const platforms = [
 ];
 
 const Platforms = () => (
+
   <section id="platforms" className="platforms">
-    <h2>Our Component Offering</h2>
-    <p className="lead">Plug into the tools you already use — simple integrations and enterprise-ready SDKs.</p>
+        <h2
+      style={{
+        fontSize: '1.75rem',
+        fontWeight: 800,
+        textAlign: 'center',
+        marginBottom: '0.5rem',
+        color: 'var(--text-on-dark, #0f1724)',
+        background: 'transparent',
+        textShadow: '0 1px 2px rgba(0,0,0,0.04)'
+      }}
+    >
+      Our Component Offerings :
+    </h2>
+    <p
+      style={{
+        textAlign: 'center',
+        color: 'var(--muted, #6b7280)',
+        marginBottom: '1.25rem',
+        maxWidth: '42rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        background: 'transparent',
+        textShadow: '0 1px 2px rgba(0,0,0,0.03)'
+      }}
+    ></p>
 
     <div className="platforms-grid">
       {platforms.map((p, idx) => (

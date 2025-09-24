@@ -8,18 +8,37 @@ const features = [
 
 const Features = () => (
   <section id="features" className="py-20 max-w-7xl mx-auto px-6">
-    <h2 className="text-4xl font-extrabold text-center mb-10">Features</h2>
-    <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">Powerful moderation tools that combine automated detection with human oversight — built for scale and safety.</p>
+    <h2 style={{ fontSize: '2.25rem', fontWeight: 800, textAlign: 'center', marginBottom: '2.5rem', color: 'var(--text-on-dark)' }}>Features</h2>
+    <p style={{ textAlign: 'center', color: 'var(--muted)', maxWidth: '32rem', margin: '0 auto 3rem' }}>
+      Powerful moderation tools that combine automated detection with human oversight — built for scale and safety.
+    </p>
 
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
       {features.map(f => (
-        <article key={f.title} className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transform hover:-translate-y-1 transition">
-          <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-50 text-indigo-600 mb-4">
-            {/* simple icon: initials */}
-            <span className="font-bold">{f.title.split(' ').map(s => s[0]).slice(0,2).join('')}</span>
+        <article
+          key={f.title}
+          style={{
+            background: 'var(--card)',
+            borderRadius: '1rem',
+            padding: '1.5rem',
+            boxShadow: '0 10px 25px rgba(2,6,23,0.06)',
+            transition: 'transform .14s ease, box-shadow .14s ease',
+            color: 'var(--text-on-dark)'
+          }}
+          onMouseOver={e => {
+            (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
+            (e.currentTarget as HTMLElement).style.boxShadow = '0 18px 40px rgba(2,6,23,0.09)';
+          }}
+          onMouseOut={e => {
+            (e.currentTarget as HTMLElement).style.transform = '';
+            (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 25px rgba(2,6,23,0.06)';
+          }}
+        >
+          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '3rem', width: '3rem', borderRadius: '0.75rem', background: '#eef2ff', color: 'var(--accent)', marginBottom: '1rem', fontWeight: 700 }}>
+            <span>{f.title.split(' ').map(s => s[0]).slice(0,2).join('')}</span>
           </div>
-          <h4 className="text-lg font-semibold text-gray-800">{f.title}</h4>
-          <p className="mt-2 text-gray-600 text-sm">{f.desc}</p>
+          <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#0f1724' }}>{f.title}</h4>
+          <p style={{ marginTop: '0.5rem', color: 'var(--muted)', fontSize: '0.95rem' }}>{f.desc}</p>
         </article>
       ))}
     </div>
