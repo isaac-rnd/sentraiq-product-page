@@ -81,7 +81,7 @@ const Platforms = () => (
             )}
           </ul>
 
-          <a href={p.link} target="_blank" rel="noreferrer" className="platform-cta" style={{marginTop: '0.6rem'}}>View on GitHub</a>
+          <a href={p.link} target="_blank" rel="noreferrer" className="platform-cta" style={{marginTop: '0.6rem', color: '#6b7280'}}>View on GitHub</a>
         </article>
       ))}
     </div>
